@@ -1,0 +1,5 @@
+# Project exclude paths
+/repositories/jpa/target/
+/repositories/mongodb/target/
+/repositories/redis/target/
+/.idea

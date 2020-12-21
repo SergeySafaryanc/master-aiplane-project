@@ -1,0 +1,38 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+    <persistence-unit name="redis-test" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.ogm.jpa.HibernateOgmPersistence</provider>
+        <class>ru.sfedu.repositories.redis.entity.TestEntity</class>
+<!--        <properties>-->
+<!--            <property name="hibernate.ogm.datastore.provider" value="redis_experimental"/>-->
+<!--            <property name="hibernate.ogm.datastore.grid_dialect" value="org.hibernate.ogm.datastore.redis.RedisJsonDialect"/>-->
+<!--            <property name="hibernate.ogm.datastore.redis.association_storage" value="org.hibernate.ogm.datastore.document.options.AssociationStorageType.IN_ENTITY"/>-->
+<!--            <property name="hibernate.ogm.datastore.provider" value="org.hibernate.ogm.datastore.redis.impl.RedisDatastoreProvider"/>-->
+<!--            <property name="hibernate.ogm.datastore.host" value="127.0.0.1:6379"/>-->
+<!--            <property name="hibernate.ogm.datastore.provider" value="org.hibernate.ogm.datastore.redis.impl.RedisDatastoreProvider"/>-->
+<!--            <property name="hibernate.ogm.datastore.host" value="localhost:6379"/>-->
+<!--            <property name="hibernate.ogm.redis.ssl" value="false"/>-->
+<!--            <property name="hibernate.ogm.datastore.provider" value="org.hibernate.ogm.datastore.redis.impl.RedisDatastoreProvider" />-->
+<!--            <property name="hibernate.ogm.datastore.create_database" value="true"/>-->
+<!--            <property name="hibernate.ogm.datastore.database" value="0"/>-->
+<!--            <property name="hibernate.ogm.redis.cluster" value="false"/>-->
+<!--            <property name="hibernate.ogm.datastore.grid_dialect" value="org.hibernate.ogm.datastore.redis.RedisJsonDialect"/>-->
+
+
+<!--        <provider>org.hibernate.ogm.jpa.HibernateOgmPersistence</provider>-->
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <properties>
+            <property name="hibernate.ogm.datastore.provider" value="redis_experimental" />
+            <property name="hibernate.ogm.datastore.host" value="localhost:6379" />
+            <!-- <property name="hibernate.ogm.redis.ttl" value="-1" /> -->
+            <property name="hibernate.ogm.redis.ssl" value="false" />
+            <property name="hibernate.ogm.redis.cluster" value="false" />
+            <!-- <property name="hibernate.ogm.datastore.grid_dialect" value="org.hibernate.ogm.datastore.redis.RedisHashDialect"
+                /> -->
+            <property name="hibernate.ogm.datastore.grid_dialect" value="org.hibernate.ogm.datastore.redis.RedisJsonDialect" />
+
+        </properties>
+    </persistence-unit>
+</persistence>
